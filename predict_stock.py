@@ -71,7 +71,7 @@ def predict_stock_trend(input_date):
     prediction_points = mlines.Line2D([], [], color = "black", marker = "o", markerfacecolor="None", linestyle='None', 
         label = "Daily Closing Points")
     
-    plt.legend(handles = [prediction_points], fontsize = 14, loc = "upper left", borderpad=25.0)
+    plt.legend(handles = [prediction_points], fontsize = 14, loc = "upper left", labelpad=10.0)
 
     plt.tight_layout()
 
