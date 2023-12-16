@@ -13,8 +13,8 @@ import matplotlib.dates as mdates
 def predict_stock_trend(input_date):
     model = load_model("Stock_Pred_LSTM.h5")
 
-    date_split = input_date.split("-")
-    start_date = date(int(date_split[0]), int(date_split[1]), int(date_split[2]))
+    # date_split = input_date.split("-")
+    start_date = input_date # date(int(date_split[0]), int(date_split[1]), int(date_split[2]))
     future_date = start_date + relativedelta(months=1)
     future_date = future_date.strftime("%Y-%m-%d")
 
