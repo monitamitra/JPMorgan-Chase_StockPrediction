@@ -65,8 +65,11 @@ def predict_stock_trend(input_date):
         ax.spines[spine].set_visible(False)
     
     for spine in ["left", "bottom"]:
-        ax.spines[spine].set_color("blue");
+        ax.spines[spine].set_color("blue")
     
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend(handles, labels)
+
     plt.tight_layout()
 
     return fig
