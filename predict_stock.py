@@ -67,7 +67,7 @@ def predict_stock_trend(input_date):
     for spine in ["left", "bottom"]:
         ax.spines[spine].set_color("blue")
     
-    ax.legend(predictions, ["Closing Prices"])
+    plt.legend(handles = [predictions], fontsize = 20, loc = "upper left")
 
     plt.tight_layout()
 
