@@ -73,6 +73,4 @@ def predict_stock_trend(input_date):
     
     plt.legend(handles = [prediction_points], fontsize = 9, loc = "upper right", bbox_to_anchor=(1.1, 1.05))
 
-    plt.tight_layout()
-
     return fig
