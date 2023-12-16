@@ -48,7 +48,7 @@ def predict_stock_trend(input_date):
     predictions = scaler.inverse_transform(predictions)
 
     fig, ax = plt.subplots()
-    plt.plot(predictions, marker='o', markerfacecolor='none', color="black", linewidth=2)
+    plt.plot(predictions, marker='o', markerfacecolor='none', color="black", linewidth=2, markersize=10)
     plt.title('Predicted Stock Trend', pad=20)
     plt.xlabel('Date')
     plt.ylabel('Stock Price (USD)')
