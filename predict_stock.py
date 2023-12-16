@@ -6,8 +6,6 @@ import yfinance as yf
 from datetime import date
 from dateutil.relativedelta import relativedelta
 from sklearn.preprocessing import MinMaxScaler
-from PIL import Image
-
 
 def predict_stock_trend(input_date):
     model = load_model("C:/Users/mitra/Downloads/Stock_Pred_LSTM.h5")
@@ -45,17 +43,12 @@ def predict_stock_trend(input_date):
     predictions = model.predict(final_x_test_data)
     predictions = scaler.inverse_transform(predictions)
 
-    plt.figure(figsize=(10, 6))
-    plt.plot(predictions, marker='o')
-    plt.title('Predicted Stock Trends')
-    plt.xlabel('Date')
-    plt.ylabel('Stock Price')
-    plt.xticks(rotation=45)
-    plt.tight_layout()
+    plotRes = plt.figure(figsize=(10, 6))
+    plotRes.plot(predictions, marker='o')
+    plotRes.title('Predicted Stock Trends')
+    plotRes.xlabel('Date')
+    plotRes.ylabel('Stock Price')
+    plotRes.xticks(rotation=45)
+    plotRes.tight_layout()
 
-    plot_path = 'C:/Users/mitra/Downloads/path_to_plot.png'
-    plt.savefig(plot_path)
-    plt.close()
-
-    img = Image.open(plot_path)
-    return img
+    return plotRes
