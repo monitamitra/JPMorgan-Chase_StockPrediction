@@ -48,15 +48,15 @@ def predict_stock_trend(input_date):
     predictions = scaler.inverse_transform(predictions)
 
     fig, ax = plt.subplots()
-    plt.plot(predictions, marker='o', markerfacecolor='none', color="black", linewidth=3)
-    plt.title('Predicted Stock Trend', pad=15)
+    plt.plot(predictions, marker='o', markerfacecolor='none', color="black", linewidth=2)
+    plt.title('Predicted Stock Trend', pad=20)
     plt.xlabel('Date')
     plt.ylabel('Stock Price (USD)')
     
     date_form = DateFormatter("%m/%d")
     # type of date formatter
     ax.xaxis.set_major_formatter(date_form)
-    ax.xaxis.set_major_locator(mdates.WeekdayLocator(byweekday=MO))
+    ax.xaxis.set_major_locator(mdates.WeekdayLocator(byweekday=(MO, FR)))
     # positions x ticks on like of axis
     plt.xticks(rotation = 40, ha = "right", fontsize = 10)
     ax.set_xlabel("Date", fontsize = 14)
