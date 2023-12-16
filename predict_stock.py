@@ -6,6 +6,8 @@ import yfinance as yf
 from datetime import date
 from dateutil.relativedelta import relativedelta
 from sklearn.preprocessing import MinMaxScaler
+from matplotlib.dates import DateFormatter
+import matplotlib.dates as mdates
 
 def predict_stock_trend(input_date):
     model = load_model("Stock_Pred_LSTM.h5")
@@ -43,12 +45,21 @@ def predict_stock_trend(input_date):
     predictions = model.predict(final_x_test_data)
     predictions = scaler.inverse_transform(predictions)
 
-    plotRes = plt.figure(figsize=(10, 6))
+    fig, ax = plt.subplots()
     plt.plot(predictions, marker='o')
-    plt.title('Predicted Stock Trends')
+    plt.title('Predicted Stock Trend')
     plt.xlabel('Date')
     plt.ylabel('Stock Price')
-    plt.xticks(rotation=45)
+    
+    date_form = DateFormatter("%m/%d")
+    # type of date formatter
+    ax.xaxis.set_major_formatter(date_form)
+    ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
+    # positions x ticks on like of axis
+    ax.xticks(rotation = 40, ha = "right", fontsize = 15)
+    ax.set_xlabel("Date", fontsize = 20)
+    ax.xaxis.labelpad = 25.0
+    
     plt.tight_layout()
 
-    return plotRes
+    return fig
