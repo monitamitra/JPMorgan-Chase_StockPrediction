@@ -8,6 +8,7 @@ from dateutil.relativedelta import relativedelta
 from sklearn.preprocessing import MinMaxScaler
 from matplotlib.dates import DateFormatter
 import matplotlib.dates as mdates
+import matplotlib.lines as mlines
 
 
 def predict_stock_trend(input_date):
@@ -67,7 +68,10 @@ def predict_stock_trend(input_date):
     for spine in ["left", "bottom"]:
         ax.spines[spine].set_color("blue")
     
-    plt.legend(handles = [predictions], fontsize = 20, loc = "upper left")
+    prediction_points = mlines.Line2D([], [], color = "black", marker = "0", linestyle='None', 
+        label = "Daily Closing Points")
+    
+    plt.legend(handles = [prediction_points], fontsize = 14, loc = "upper left")
 
     plt.tight_layout()
 
