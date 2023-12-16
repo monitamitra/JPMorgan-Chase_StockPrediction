@@ -6,3 +6,4 @@ yfinance==0.2.33
 datetime==5.4
 scikit-learn==1.2.2
 keras==2.14.0
+tensorflow==2.14.0
