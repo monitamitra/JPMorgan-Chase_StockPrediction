@@ -68,10 +68,10 @@ def predict_stock_trend(input_date):
     for spine in ["left", "bottom"]:
         ax.spines[spine].set_color("blue")
     
-    prediction_points = mlines.Line2D([], [], color = "black", marker = "o", linestyle='None', 
+    prediction_points = mlines.Line2D([], [], color = "black", marker = "o", markerfacecolor="None", linestyle='None', 
         label = "Daily Closing Points")
     
-    plt.legend(handles = [prediction_points], fontsize = 14, loc = "upper left")
+    plt.legend(handles = [prediction_points], fontsize = 14, loc = "upper left", borderpad=25.0)
 
     plt.tight_layout()
 
