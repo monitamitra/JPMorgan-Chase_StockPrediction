@@ -1,4 +1,3 @@
-import gradio as gr
 from predict_stock import predict_stock_trend
 import streamlit as st
 
