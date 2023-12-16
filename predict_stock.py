@@ -72,6 +72,7 @@ def predict_stock_trend(input_date):
         label = "Daily Closing Points")
     
     plt.legend(handles = [prediction_points], fontsize = 9, loc = "upper right")
+    ax.legend(bbox_to_anchor=(1.1, 1.05))
 
     plt.tight_layout()
 
