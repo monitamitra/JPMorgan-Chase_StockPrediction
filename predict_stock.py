@@ -55,9 +55,9 @@ def predict_stock_trend(input_date):
     date_form = DateFormatter("%m/%d")
     # type of date formatter
     ax.xaxis.set_major_formatter(date_form)
-    ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
+    ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=0))
     # positions x ticks on like of axis
-    plt.xticks(rotation = 40, ha = "right", fontsize = 14)
+    plt.xticks(rotation = 40, ha = "right", fontsize = 10)
     ax.set_xlabel("Date", fontsize = 14)
     ax.xaxis.labelpad = 25.0
     ax.yaxis.labelpad = 25.0
