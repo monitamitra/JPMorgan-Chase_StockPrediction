@@ -7,4 +7,3 @@ datetime==5.4
 scikit-learn==1.2.2
 keras==2.14.0
 tensorflow==2.14.0
-seaborn==0.13.0
