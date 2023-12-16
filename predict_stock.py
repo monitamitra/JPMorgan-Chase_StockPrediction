@@ -49,16 +49,15 @@ def predict_stock_trend(input_date):
     plt.plot(predictions, marker='o')
     plt.title('Predicted Stock Trend')
     plt.xlabel('Date')
-    plt.ylabel('Stock Price')
+    plt.ylabel('Stock Price (USD)')
     
     date_form = DateFormatter("%m/%d")
     # type of date formatter
     ax.xaxis.set_major_formatter(date_form)
     ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
     # positions x ticks on like of axis
-    plt.xticks(rotation = 40, ha = "right", fontsize = 15)
-    ax.set_xlabel("Date", fontsize = 20)
-    ax.xaxis.labelpad = 25.0
+    plt.xticks(rotation = 40, ha = "right", fontsize = 14)
+    ax.set_xlabel("Date", fontsize = 14)
     
     plt.tight_layout()
 
