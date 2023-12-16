@@ -8,7 +8,7 @@ from dateutil.relativedelta import relativedelta
 from sklearn.preprocessing import MinMaxScaler
 
 def predict_stock_trend(input_date):
-    model = load_model("C:/Users/mitra/Downloads/Stock_Pred_LSTM.h5")
+    model = load_model("Stock_Pred_LSTM.h5")
 
     date_split = input_date.split("-")
     start_date = date(int(date_split[0]), int(date_split[1]), int(date_split[2]))
