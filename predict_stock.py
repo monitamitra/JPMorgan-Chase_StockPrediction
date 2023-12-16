@@ -8,6 +8,7 @@ from dateutil.relativedelta import relativedelta
 from sklearn.preprocessing import MinMaxScaler
 from matplotlib.dates import DateFormatter
 import matplotlib.dates as mdates
+import seaborn as sns
 
 def predict_stock_trend(input_date):
     model = load_model("Stock_Pred_LSTM.h5")
@@ -58,6 +59,10 @@ def predict_stock_trend(input_date):
     # positions x ticks on like of axis
     plt.xticks(rotation = 40, ha = "right", fontsize = 14)
     ax.set_xlabel("Date", fontsize = 14)
+    ax.xaxis.labelpad = 25.0
+    ax.yaxis.labelpad = 25.0
+    sns.despine()
+    sns.set_style("whitegrid")
     
     plt.tight_layout()
 
