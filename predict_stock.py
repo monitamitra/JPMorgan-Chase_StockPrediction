@@ -18,7 +18,7 @@ def predict_stock_trend(input_date):
     test_data = yf.download("JPM", start=input_date, end=future_date, progress=False)
     test_data = test_data.iloc[:, 1].values
 
-    unscaled_x_training_data = pd.read_csv("C:/Users/mitra/Downloads/JPM_Training.csv")
+    unscaled_x_training_data = pd.read_csv("JPM_Training.csv")
     unscaled_test_data = yf.download("JPM", start=input_date, end=future_date, progress=False)
     all_data = pd.concat((unscaled_x_training_data['Open'], unscaled_test_data['Open']), axis = 0)
    
@@ -26,7 +26,7 @@ def predict_stock_trend(input_date):
     x_test_data = np.reshape(x_test_data, (-1, 1))
 
     scaler = MinMaxScaler()
-    training_data = pd.read_csv("C:/Users/mitra/Downloads/JPM_Training.csv").iloc[:, 1].values
+    training_data = pd.read_csv("JPM_Training.csv").iloc[:, 1].values
     scaler.fit_transform(training_data.reshape(-1, 1))
     x_test_data = scaler.transform(x_test_data)
 
