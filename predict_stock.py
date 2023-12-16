@@ -44,11 +44,11 @@ def predict_stock_trend(input_date):
     predictions = scaler.inverse_transform(predictions)
 
     plotRes = plt.figure(figsize=(10, 6))
-    plotRes.plot(predictions, marker='o')
-    plotRes.title('Predicted Stock Trends')
-    plotRes.xlabel('Date')
-    plotRes.ylabel('Stock Price')
-    plotRes.xticks(rotation=45)
-    plotRes.tight_layout()
+    plt.plot(predictions, marker='o')
+    plt.title('Predicted Stock Trends')
+    plt.xlabel('Date')
+    plt.ylabel('Stock Price')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
 
     return plotRes
