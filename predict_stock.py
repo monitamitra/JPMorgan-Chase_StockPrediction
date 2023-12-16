@@ -48,7 +48,7 @@ def predict_stock_trend(input_date):
 
     fig, ax = plt.subplots()
     plt.plot(predictions, marker='o', markerfacecolor='none', color="black")
-    plt.title('Predicted Stock Trend', pad=10)
+    plt.title('Predicted Stock Trend', pad=15)
     plt.xlabel('Date')
     plt.ylabel('Stock Price (USD)')
     
@@ -71,6 +71,6 @@ def predict_stock_trend(input_date):
     prediction_points = mlines.Line2D([], [], color = "black", marker = "o", markerfacecolor="None", linestyle='None', 
         label = "Daily Closing Points")
     
-    plt.legend(handles = [prediction_points], fontsize = 9, loc = "upper right", bbox_to_anchor=(1.10, 1.10))
+    plt.legend(handles = [prediction_points], fontsize = 9, loc = "upper left", bbox_to_anchor=(1.10, 1.10))
 
     return fig
