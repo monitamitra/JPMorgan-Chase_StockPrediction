@@ -7,11 +7,10 @@ st.markdown("LSTM model aims to forecast the monthly stock direction of JP Morga
         when provided with a date as its input")
 
 with st.sidebar:
+        st.header("Date")
         date = st.date_input("Choose a date to predict stock trends")
 
-
-st.text("Prediction")
-button_predict = st.button("Predict")
+button_predict = st.button("Predict Trend")
 
 if button_predict and date:
         result = predict_stock_trend(date)

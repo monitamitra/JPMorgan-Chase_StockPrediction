@@ -13,8 +13,7 @@ import matplotlib.dates as mdates
 def predict_stock_trend(input_date):
     model = load_model("Stock_Pred_LSTM.h5")
 
-    # date_split = input_date.split("-")
-    start_date = input_date # date(int(date_split[0]), int(date_split[1]), int(date_split[2]))
+    start_date = input_date 
     future_date = start_date + relativedelta(months=1)
     future_date = future_date.strftime("%Y-%m-%d")
 
@@ -47,7 +46,7 @@ def predict_stock_trend(input_date):
     predictions = scaler.inverse_transform(predictions)
 
     fig, ax = plt.subplots()
-    plt.plot(predictions, marker='o')
+    plt.plot(predictions, marker='o', markerfacecolor='none', color="black")
     plt.title('Predicted Stock Trend')
     plt.xlabel('Date')
     plt.ylabel('Stock Price (USD)')
@@ -64,6 +63,9 @@ def predict_stock_trend(input_date):
     
     for spine in ['top', 'right']:
         ax.spines[spine].set_visible(False)
+    
+    for spine in ["left", "bottom"]:
+        ax.spines[spine].set_color("blue");
     
     plt.tight_layout()
 
