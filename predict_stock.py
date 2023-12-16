@@ -9,6 +9,7 @@ from sklearn.preprocessing import MinMaxScaler
 from matplotlib.dates import DateFormatter
 import matplotlib.dates as mdates
 import matplotlib.lines as mlines
+from matplotlib.dates import MO, TU, WE, TH, FR
 
 
 def predict_stock_trend(input_date):
@@ -55,7 +56,7 @@ def predict_stock_trend(input_date):
     date_form = DateFormatter("%m/%d")
     # type of date formatter
     ax.xaxis.set_major_formatter(date_form)
-    ax.xaxis.set_major_locator(mdates.DayLocator(interval=2))
+    ax.xaxis.set_major_locator(mdates.WeekdayLocator(byweekday=(MO, TU, WE, TH, FR), interval=1))
     # positions x ticks on like of axis
     plt.xticks(rotation = 40, ha = "right", fontsize = 10)
     ax.set_xlabel("Date", fontsize = 14)
