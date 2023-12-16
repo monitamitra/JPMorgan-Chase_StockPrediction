@@ -48,7 +48,7 @@ def predict_stock_trend(input_date):
 
     fig, ax = plt.subplots()
     plt.plot(predictions, marker='o', markerfacecolor='none', color="black")
-    plt.title('Predicted Stock Trend')
+    plt.title('Predicted Stock Trend', pad=10)
     plt.xlabel('Date')
     plt.ylabel('Stock Price (USD)')
     
